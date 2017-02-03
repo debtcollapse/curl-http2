@@ -1,0 +1,16 @@
+\n
+----------------------------------------------------\n
+\n
+		Timings:\n
+\n
+		Name Lookup:  %{time_namelookup}\n
+		TCP Connect:  %{time_connect}\n
+		APP Connect:  %{time_appconnect}\n
+		Pretransfer:  %{time_pretransfer}\n
+		Redirect:  %{time_redirect}\n
+		Start Transfer:  %{time_starttransfer}\n
+		---------------------------\n
+		Total:  %{time_total}\n
+\n
+----------------------------------------------------\n
+\n
