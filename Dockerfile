@@ -11,6 +11,7 @@ COPY scripts/installer.sh /tmp/installer.sh
 # Install dependencies
 RUN apk --update upgrade && \
     apk add \
+    ca-certificates \
     openssl \
     openssl-dev \
     gcc \
@@ -32,8 +33,6 @@ RUN apk --update upgrade && \
     cd / && \
     rm -rf /tmp/* && \
     apk del \
-    openssl \
-    openssl-dev \
     gcc \
     g++ \
     libgcc \
@@ -54,5 +53,5 @@ COPY conf/curl-output.txt /curl-config/
 
 WORKDIR /root
 
-ENTRYPOINT ["/usr/local/bin/curl", "-svw", "@/curl-config/curl-output.txt"]
+ENTRYPOINT ["/usr/local/bin/curl", "-vw", "@/curl-config/curl-output.txt"]
 CMD ["--help"]
